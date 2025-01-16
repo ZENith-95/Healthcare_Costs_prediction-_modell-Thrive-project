@@ -4,6 +4,8 @@ import joblib
 
 app = Flask(__name__)
 
+CORS(app)
+
 # Load the trained model
 model = joblib.load("Healthcare_Costs_Prediction_model.pkl")
 
