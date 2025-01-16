@@ -1,66 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Healthcare Cost Estimator</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="container">
-    <h1>Healthcare Cost Estimator</h1>
-    <p>Enter the details below to estimate healthcare costs:</p>
-    
-    <form id="prediction-form">
-      <div class="input-group">
-        <label for="age">Age</label>
-        <input type="number" id="age" placeholder="Enter age" required>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Healthcare Cost Predictor</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="glass-panel">
+        <h1 class="headline">
+          <span class="highlight">Healthcare Costs</span><br />
+          Prediction Model
+        </h1>
+        <p class="subheading">
+          Enter the following details to predict Healthcare cost:
+        </p>
+
+        <form id="prediction-form">
+          <!-- Age Slider -->
+          <div class="input-group">
+            <label for="age">Age</label>
+            <div class="slider-container">
+              <input
+                type="range"
+                id="age"
+                min="0"
+                max="100"
+                step="1"
+                value="30"
+                oninput="updateAgeLabel(this.value)"
+                class="range-slider" />
+              <span id="age-label" class="range-value">30</span>
+            </div>
+          </div>
+
+          <!-- Sex Dropdown -->
+          <div class="input-group">
+            <label for="sex">Sex</label>
+            <select id="sex" required class="dropdown">
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
+
+          <!-- BMI Input -->
+          <div class="input-group">
+            <label for="bmi">BMI</label>
+            <input
+              type="number"
+              id="bmi"
+              step="0.1"
+              placeholder="Enter BMI"
+              required
+              class="text-input" />
+          </div>
+
+          <!-- Children Slider -->
+          <div class="input-group">
+            <label for="children">Number of Children</label>
+            <div class="slider-container">
+              <input
+                type="range"
+                id="children"
+                min="0"
+                max="10"
+                step="1"
+                value="2"
+                oninput="updateChildrenLabel(this.value)"
+                class="range-slider" />
+              <span id="children-label" class="range-value">2</span>
+            </div>
+          </div>
+
+          <!-- Smoker Dropdown -->
+          <div class="input-group">
+            <label for="smoker">Smoker</label>
+            <select id="smoker" required class="dropdown">
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+
+          <!-- Region Dropdown -->
+          <div class="input-group">
+            <label for="region">Region</label>
+            <select id="region" required class="dropdown">
+              <option value="northeast">Northeast</option>
+              <option value="northwest">Northwest</option>
+              <option value="southeast">Southeast</option>
+              <option value="southwest">Southwest</option>
+            </select>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="btn neon-btn">Estimate Cost</button>
+        </form>
+
+        <!-- Result Section -->
+        <div id="result" class="result">
+          <h2>Estimated Cost: <span id="cost">$0.00</span></h2>
+        </div>
       </div>
-
-      <div class="input-group">
-        <label for="sex">Sex</label>
-        <select id="sex" required>
-          <option value="male">Male</option>
-          <option value="female">Female</option>
-        </select>
-      </div>
-
-      <div class="input-group">
-        <label for="bmi">BMI</label>
-        <input type="number" id="bmi" step="0.1" placeholder="Enter BMI" required>
-      </div>
-
-      <div class="input-group">
-        <label for="children">Number of Children</label>
-        <input type="number" id="children" placeholder="Enter number of children" required>
-      </div>
-
-      <div class="input-group">
-        <label for="smoker">Smoker</label>
-        <select id="smoker" required>
-          <option value="yes">Yes</option>
-          <option value="no">No</option>
-        </select>
-      </div>
-
-      <div class="input-group">
-        <label for="region">Region</label>
-        <select id="region" required>
-          <option value="northeast">Northeast</option>
-          <option value="northwest">Northwest</option>
-          <option value="southeast">Southeast</option>
-          <option value="southwest">Southwest</option>
-        </select>
-      </div>
-
-      <button type="submit" class="btn">Estimate Cost</button>
-    </form>
-
-    <div id="result" class="result">
-      <h2>Estimated Cost: <span id="cost">$0.00</span></h2>
     </div>
-  </div>
-
-  <script src="script.js"></script>
-</body>
-</html
+    <div class="footer-bottom">
+      <p>
+        &copy 2024 ZENith LLC Inc. Made with
+        <span class="lang1"><i class="fa-brands fa-html5"></i> </span>
+        <span class="lang2"><i class="fa-brands fa-css3-alt"></i></span>
+        <span class="lang3"><i class="fa-brands fa-js"></i></span> and
+        <span class="lang4"><i class="fa-brands fa-python"></i></span> by
+        <a href="https://github.com/ZENith-95">ZENith</a>
+        <i class=""></i>
+      </p>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
