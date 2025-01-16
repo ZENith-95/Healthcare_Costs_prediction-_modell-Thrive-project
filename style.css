@@ -127,3 +127,7 @@ button:hover {
     transform: translateY(0);
   }
 }
+
+#result {
+  display: none;
+}
