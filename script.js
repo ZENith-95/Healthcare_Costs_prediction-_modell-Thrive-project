@@ -72,5 +72,5 @@ document
   .getElementById("prediction-form")
   .addEventListener("submit", function (e) {
     e.preventDefault();
-    document.getElementById("cost").textContent = "$12"; // Example Response
+    document.getElementById("cost").textContent = "$ "; // Example Response
   });
